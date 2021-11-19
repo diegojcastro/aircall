@@ -3,9 +3,9 @@ import React from 'react';
 const Header = () => {
   return (
     <header>
-      <nav className="navbar navbar-expand-sm navbar-light ">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+      <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
             <svg width='486px' height='168px' viewBox='0 0 486 168' version='1.1' xmlns='http://www.w3.org/2000/svg'>
               <g stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
                 <g transform='translate(207.000000, 24.000000)'>
@@ -22,11 +22,13 @@ const Header = () => {
               </g>
             </svg>
           </a>
-          <div className="collapse navbar-collapse">
-            <div className="navbar-nav">
-              <a className="nav-link" href="#">Features</a>
-              <a className="nav-link" href="#">Pricing</a>
-              <a className="nav-link disabled">Disabled</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="#">All Calls</a>
+              <a class="nav-link" href="#">Archived</a>
             </div>
           </div>
         </div>
