@@ -1,3 +1,4 @@
-.call-list {
-  margin: 1em;
+#call-list {
+  margin-top: 2px;
+  max-height: 585px;
 }

@@ -11,11 +11,12 @@ const App = () => {
       <Header/>
       <Routes>
         <Route path="/" element={<CallList state={state} setState={setState}/>} />
+        <Route path="/test" element={<div>Test</div>} />
         <Route path="/missed" element={<CallList state={state} setState={setState} filter={'missed'}/>} />
+        <Route path="/archived" element={<CallList state={state} setState={setState} filter={'archived'}/>} />
 
 
       </Routes>
-      <div className="container-view">Some activities should be here</div>
 
     </div>
 
