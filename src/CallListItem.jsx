@@ -35,9 +35,9 @@ export default function CallListItem(props) {
       <div className="card-body list-item-container">
         <div className="list-item-details-left">
           <div className="phone-icon">
-            {props.call_type==='answered' && <i className="fas fa-phone"></i>}
-            {props.call_type==='missed' && <i className="fas fa-phone-slash"></i>}
-            {props.call_type==='voicemail' && <i className="fas fa-voicemail"></i>}
+            {props.call_type==='answered' && <div><i className="fas fa-phone"></i></div>}
+            {props.call_type==='missed' && <div><i className="fas fa-phone-slash"></i></div>}
+            {props.call_type==='voicemail' && <div><i className="fas fa-voicemail"></i></div>}
           </div>
           <div className="list-item-details-inner">
             <p>{props.from}</p>

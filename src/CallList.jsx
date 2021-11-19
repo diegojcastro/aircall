@@ -1,13 +1,16 @@
 import React from 'react';
 import CallListItem from './CallListItem.jsx';
+import useCallFilters from './hooks/useCallFilters.js';
 import './css/call-list.css';
 
 export default function CallList(props) {
+  const { filterByCallType, filterByArchived } = useCallFilters();
   let filteredCalls = props.state.calls;
-  if(props.filter) {
-    filteredCalls = props.state.calls.filter( (call) => {
-      return call.call_type === props.filter;
-    });
+
+  if (props.filter === 'archived') {
+    filteredCalls = filterByArchived(props.state.calls);
+  } else if (props.filter) {
+    filteredCalls = filterByCallType(props.state.calls, props.filter);
   };
 
   const parsedCalls = filteredCalls.map( (call, index) => {
