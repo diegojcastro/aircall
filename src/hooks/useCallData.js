@@ -11,6 +11,8 @@ export default function useCallData() {
     axios.get('https://aircall-job.herokuapp.com/activities')
       .then(res => {
         console.log(res.data);
+        const calls = [...res.data];
+        setState({calls});
       })
   }, []);
 
