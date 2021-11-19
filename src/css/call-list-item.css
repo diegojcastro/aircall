@@ -24,6 +24,18 @@
   margin-left: 1em;
 }
 
+.list-item-details-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 .call-receiver {
   margin-bottom: 0!important;
+}
+
+.btn-light {
+  padding: 0;
+  background-color: #ffffff00;
+  border-color: #ffffff00;
 }
