@@ -2,18 +2,28 @@
   margin: 1em;
 }
 
+.call-list-item p {
+  margin-bottom: 8px;
+}
+
 .list-item-container {
   display:flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0.5rem;
 }
 
 .list-item-details-left {
   display:flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .list-item-details-inner {
   margin-left: 1em;
+}
+
+.call-receiver {
+  margin-bottom: 0!important;
 }
