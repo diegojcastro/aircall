@@ -1,15 +1,16 @@
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './css/call-list-item.css'
 
 export default function CallListItem(props) {
+  const id = props.id;
   const date = new Date(props.created_at);
   const parsedTime = date.toUTCString().slice(17,25);
   const parsedDate = date.toUTCString().slice(0,16);
 
   const archiveItem = () => {
-    const id = props.id;
-    console.log('my id is: '+id);
+    // console.log('my id is: '+id);
     const newCalls = [];
     // This could be refactored for better efficiency
     for (const call of props.state.calls) {
@@ -20,12 +21,26 @@ export default function CallListItem(props) {
         newCalls.push(call);
       };
     };
-    console.log('state is');
-    console.log(props.state);
-    console.log('newCalls is');
-    console.log(newCalls);
+    // console.log('state is');
+    // console.log(props.state);
+    // console.log('newCalls is');
+    // console.log(newCalls);
     props.setState(prev => ({...prev, calls: newCalls}));
+    handlePOST();
   };
+
+  const handlePOST = () => {
+    console.log(`id is ${id}`);
+    const url = "https://aircall-job.herokuapp.com/activities/"+id;
+      
+    axios.post(url, {
+      is_archived: true
+    })
+      .then( (res) => {
+      console.log(res)
+      })
+      .catch( e => console.log(e.response));
+  }
 
   return(
     <div className="card call-list-item">
