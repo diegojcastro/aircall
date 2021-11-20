@@ -11,10 +11,6 @@ export default function CallListItem(props) {
   const parsedDate = date.toUTCString().slice(0,16);
 
   const archiveItem = () => {
-    console.log('isArchived')
-    console.log(isArchived)
-    console.log('!isArchived')
-    console.log(!isArchived)
     // console.log('my id is: '+id);
     const newCalls = [];
     // This could be refactored for better efficiency
@@ -75,7 +71,7 @@ export default function CallListItem(props) {
               <i className="fas fa-cog"></i>
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><Link className="dropdown-item" to="/">Details</Link></li>
+              <li><Link className="dropdown-item" to={"/details/"+id}>Details</Link></li>
               <li>
                 <button className="dropdown-item" onClick={archiveItem}>
                   {!isArchived && 'Archive'}
